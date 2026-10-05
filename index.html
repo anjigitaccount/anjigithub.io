@@ -3,184 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anji Rasakonda | Graphic Designer & Web Developer</title>
+<title>Anji Rasakonda | AI UI/UX Designer and Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#f6f7fb; --card:#fff; --text:#222; --muted:#666; --accent:#2b59c3; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#14161c; --card:#1e212a; --text:#eceef3; --muted:#a0a5b3; --accent:#7ea2ff; }
-  }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:Arial, Helvetica, sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
-  header { background:var(--accent); color:#fff; text-align:center; padding:48px 16px; }
-  header h1 { margin:0 0 8px; font-size:2.2rem; }
-  header p { margin:4px 0; }
-  header a { color:#fff; }
-  nav { display:flex; flex-wrap:wrap; justify-content:center; gap:6px 18px; padding:12px; background:var(--card); position:sticky; top:0; }
-  nav a { color:var(--accent); text-decoration:none; font-weight:bold; }
-  main { max-width:900px; margin:0 auto; padding:16px; }
-  section { background:var(--card); border-radius:10px; padding:20px 24px; margin:18px 0; }
-  h2 { margin-top:0; color:var(--accent); border-bottom:2px solid var(--accent); padding-bottom:6px; }
-  ul { padding-left:20px; }
-  .tags { display:flex; flex-wrap:wrap; gap:8px; padding:0; list-style:none; }
-  .tags li { background:var(--bg); border:1px solid var(--accent); border-radius:20px; padding:4px 12px; font-size:.9rem; }
-  .project { margin-bottom:18px; }
-  .project h3 { margin:0; }
-  .meta { color:var(--muted); font-size:.9rem; }
-  .links a { display:inline-block; margin:2px 10px 2px 0; color:var(--accent); word-break:break-all; }
-  footer { text-align:center; color:var(--muted); padding:24px; font-size:.9rem; }
+:root{--ink:#0a0b1e;--panel:#14163a;--line:#2a2d63;--violet:#7c5cff;--cyan:#38e1ff;--text:#e8e9ff;--muted:#9a9dc8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--text);font:16px/1.65 'DM Sans',Arial,sans-serif}
+h1,h2,h3{font-family:Sora,Arial,sans-serif;line-height:1.15;margin:0}
+a{color:var(--cyan)}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+nav{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;gap:6px 20px;align-items:center;justify-content:space-between;padding:12px 5vw;background:rgba(10,11,30,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav b{font-family:Sora,Arial,sans-serif}
+nav div{display:flex;flex-wrap:wrap;gap:4px 18px}
+nav a{color:var(--muted);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--text)}
+#hero{position:relative;min-height:88vh;display:flex;align-items:center;padding:60px 5vw;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%}
+.hero-in{position:relative;max-width:820px}
+#hero h1{font-size:clamp(2.6rem,8vw,5.6rem);font-weight:800;letter-spacing:-.03em}
+#hero .role{font-family:Sora,Arial,sans-serif;font-size:clamp(1.2rem,3vw,1.9rem);color:var(--cyan);margin:14px 0 10px}
+.prompt{display:flex;gap:10px;align-items:center;margin:22px 0;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;max-width:640px;min-height:56px}
+.prompt i{color:var(--violet);font-style:normal;font-weight:700}
+#typed::after{content:'|';animation:blink 1s steps(2) infinite;color:var(--cyan)}
+@keyframes blink{50%{opacity:0}}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 24px;border-radius:10px;border:1px solid var(--violet);background:var(--violet);color:#fff;font:700 1rem 'DM Sans',Arial,sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(124,92,255,.45)}
+.btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
+section.s{padding:72px 5vw;max-width:1100px;margin:0 auto}
+section.s>h2{font-size:clamp(1.7rem,4vw,2.5rem);margin-bottom:10px}
+.lead{color:var(--muted);max-width:62ch;margin:0 0 28px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:26px}
+.stat{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.stat b{display:block;font:800 2rem Sora,Arial,sans-serif;color:var(--cyan)}
+.stat span{color:var(--muted);font-size:.92rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.chip{padding:8px 16px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--muted);font:500 .95rem 'DM Sans',Arial,sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--violet);border-color:var(--violet);color:#fff}
+.skills{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:0}
+.skills li{padding:7px 14px;border-radius:8px;background:var(--panel);border:1px solid var(--line);transition:opacity .25s,transform .25s}
+.skills li.off{display:none}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tab{padding:10px 18px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--muted);font:600 .95rem 'DM Sans',Arial,sans-serif;cursor:pointer}
+.tab[aria-selected=true]{color:#fff;border-color:var(--cyan);box-shadow:inset 0 -3px 0 var(--cyan)}
+.tp{padding:26px;border:1px solid var(--line);border-radius:14px;background:var(--panel);min-height:150px}
+.tp h3{margin-bottom:8px;font-size:1.4rem}
+.tp p{margin:0;color:var(--muted);max-width:64ch}
+.tp .use{margin-top:12px;color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.card{padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--panel);transition:transform .25s,border-color .25s;transform-style:preserve-3d}
+.card:hover{border-color:var(--violet)}
+.card h3{font-size:1.05rem;word-break:break-word}
+.card small{display:block;color:var(--cyan);margin:6px 0 10px}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.links{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:6px}
+.links a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--line)}
+.links a:hover{color:var(--cyan)}
+ul.plain{padding-left:20px;max-width:75ch}
+ul.plain li{margin-bottom:8px}
+form{display:grid;gap:14px;max-width:620px}
+label{display:grid;gap:6px;font-weight:500}
+input,textarea{padding:13px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--text);font:inherit}
+textarea{min-height:130px;resize:vertical}
+.hp{position:absolute;left:-9999px}
+#status{min-height:1.5em;font-weight:500}
+.ok{color:#5df2a8}.err{color:#ff8a8a}
+footer{padding:32px 5vw;text-align:center;color:var(--muted);border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media print{
+ body{background:#fff;color:#111;font-size:11pt}
+ nav,#net,.prompt,.btns,#contact,#trends,.chips,.tabs,footer{display:none!important}
+ #hero{min-height:0;padding:0 0 10px}#hero h1{font-size:28pt;color:#111}#hero .role{color:#333;font-size:14pt}
+ section.s{padding:10px 0;max-width:none}.card,.stat,.skills li{background:#fff;border-color:#bbb;color:#111}
+ .card p,.lead,.stat span{color:#333}a{color:#111}.stat b{color:#111}
+}
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Anji Rasakonda</h1>
-  <p>Graphic Designer &amp; Web Developer (UI/UX Designer and Developer)</p>
-  <p>Prabhadevi, Maharashtra – 400018</p>
-  <p><a href="http://www.anjirasakonda.com">www.anjirasakonda.com</a></p>
-</header>
-
 <nav>
-  <a href="#objective">Objective</a>
-  <a href="#experience">Experience</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#work">Work Samples</a>
-  <a href="#about">About</a>
+  <b>Anji Rasakonda</b>
+  <div>
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#trends">AI in 2026</a>
+    <a href="#projects">Projects</a><a href="#contact">Contact</a>
+  </div>
 </nav>
 
-<main>
+<header id="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="hero-in">
+    <h1>Anji Rasakonda</h1>
+    <p class="role">AI UI/UX Designer and Developer</p>
+    <p class="lead">15+ years designing and building websites that people find easy to use. Prabhadevi, Maharashtra.</p>
+    <div class="prompt"><i>&gt;</i><span id="typed"></span></div>
+    <div class="btns">
+      <a class="btn" href="#contact">Start a project</a>
+      <button class="btn ghost" id="print" type="button">Save resume as PDF</button>
+    </div>
+  </div>
+</header>
 
-<section id="objective">
-  <h2>Objective</h2>
-  <p>To use technology at its best towards the goals of the organization and to enhance my skills. I aim to give my best effort in web development with a positive attitude, using the latest technology.</p>
-</section>
-
-<section id="experience">
-  <h2>Work Experience: 15+ Years</h2>
-  <h3>Role and Responsibilities</h3>
-  <ul>
-    <li>Graphic Designer &amp; Web Developer (UI/UX Designer and Developer): building user-friendly websites where all information is easily available to users. I design web layouts in Photoshop and convert PSD files into table-less HTML/HTML5 using Dreamweaver, and edit scripts for banners and sliders.</li>
-    <li>Bootstrap websites that are responsive and friendly on all devices.</li>
-    <li>WordPress websites that are mobile and device friendly.</li>
-    <li>User-friendly websites in PHP.</li>
-    <li>HTML5 Canvas &amp; SVG animations.</li>
-    <li>AI image and video generation, including short, fun product videos.</li>
-    <li>AI-assisted landing campaign pages (using tools like ChatGPT and Claude) with Google tracking and form data capture after submission.</li>
-    <li>Canva AI: video edits and AI voice-overs for the company's social channels, social media posts, brochures, and live Canva landing pages.</li>
+<section class="s" id="about">
+  <h2>About</h2>
+  <p class="lead">I want to use technology at its best for an organization's goals, and keep growing my skills. I give my best effort to web development, with a positive attitude and the latest tools.</p>
+  <ul class="plain">
+    <li>Design web layouts in Photoshop and Figma, then convert them to table-less HTML5 and CSS3.</li>
+    <li>Build responsive Bootstrap, WordPress and PHP websites that work on every device.</li>
+    <li>Create HTML5 Canvas and SVG animations, banners and sliders.</li>
+    <li>Use AI tools such as ChatGPT and Claude to build landing pages that send form data and tracking to Google.</li>
+    <li>Generate AI images, short product videos and voice-overs, and edit them in Canva for company social channels.</li>
   </ul>
-  <h3>Open Source</h3>
-  <ul class="tags"><li>Bootstrap</li><li>WordPress</li></ul>
+  <div class="stats">
+    <div class="stat"><b data-n="15">0</b><span>years of experience</span></div>
+    <div class="stat"><b data-n="45">0</b><span>websites delivered</span></div>
+    <div class="stat"><b data-n="9">0</b><span>design tools used daily</span></div>
+    <div class="stat"><b data-n="3">0</b><span>AI workflows in use</span></div>
+  </div>
 </section>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <h3>Tools</h3>
-  <ul class="tags">
-    <li>Adobe Photoshop CC</li><li>Adobe Illustrator CC</li><li>Adobe Dreamweaver CC</li>
-    <li>Adobe Flash Professional CC &amp; HTML5 Canvas</li><li>Adobe Edge Animate CC</li>
-    <li>Adobe InDesign</li><li>Adobe Fireworks</li><li>CorelDRAW</li><li>MS Office</li>
-    <li>Affinity</li><li>Figma</li>
+<section class="s" id="skills">
+  <h2>Skills and tools</h2>
+  <p class="lead">Pick a group to filter the list.</p>
+  <div class="chips" role="group" aria-label="Filter skills">
+    <button class="chip" data-f="all" aria-pressed="true">All</button>
+    <button class="chip" data-f="design" aria-pressed="false">Design tools</button>
+    <button class="chip" data-f="code" aria-pressed="false">Languages</button>
+    <button class="chip" data-f="ai" aria-pressed="false">AI</button>
+  </div>
+  <ul class="skills">
+    <li data-c="design">Figma</li><li data-c="design">Affinity</li><li data-c="design">Adobe Photoshop CC</li>
+    <li data-c="design">Adobe Illustrator CC</li><li data-c="design">Adobe Dreamweaver CC</li>
+    <li data-c="design">Adobe Flash Professional CC</li><li data-c="design">Adobe Edge Animate CC</li>
+    <li data-c="design">Adobe InDesign</li><li data-c="design">Adobe Fireworks</li><li data-c="design">CorelDRAW</li>
+    <li data-c="design">Canva</li><li data-c="design">MS Office</li>
+    <li data-c="code">HTML / HTML5</li><li data-c="code">CSS / CSS3</li><li data-c="code">PHP</li>
+    <li data-c="code">JavaScript (basic)</li><li data-c="code">ActionScript 3.0 (basic)</li>
+    <li data-c="code">HTML5 Canvas and SVG</li><li data-c="code">Bootstrap</li><li data-c="code">WordPress</li>
+    <li data-c="ai">ChatGPT</li><li data-c="ai">Claude</li><li data-c="ai">AI image generation</li>
+    <li data-c="ai">AI video and voice-over</li><li data-c="ai">Canva AI</li>
   </ul>
-  <h3>Languages</h3>
-  <ul class="tags">
-    <li>HTML / HTML5</li><li>CSS / CSS3</li><li>PHP</li>
-    <li>ActionScript 3.0 (basic)</li><li>JavaScript (basic)</li><li>HTML5 Canvas &amp; Flash Animations</li>
-  </ul>
 </section>
 
-<section id="projects">
-  <h2>Project Profile</h2>
-
-  <div class="project">
-    <h3><a href="http://www.kalyxinfotech.com">www.kalyxinfotech.com</a></h3>
-    <p class="meta">Bootstrap, Photoshop, HTML5, CSS3, JavaScript, PHP, Dreamweaver | Role: Designing &amp; Developing</p>
-    <p>A responsive Bootstrap website for web services. I designed the home and inner pages in Photoshop, converted them to HTML5/CSS3 in Dreamweaver, and edited JavaScript to make the site more user friendly.</p>
-  </div>
-
-  <div class="project">
-    <h3><a href="http://www.smell.co.in">www.smell.co.in</a> | <a href="http://www.beautyandvogue.com">www.beautyandvogue.com</a></h3>
-    <p class="meta">Bootstrap + WordPress, Photoshop, HTML5, CSS3, JavaScript, PHP, Dreamweaver | Role: Designing &amp; Developing</p>
-    <p>Responsive websites built with Bootstrap and WordPress, designed and developed for all devices.</p>
-  </div>
-
-  <div class="project">
-    <h3><a href="http://www.arhamcomposite.com">www.arhamcomposite.com</a></h3>
-    <p class="meta">Photoshop, HTML, CSS3, PHP, JavaScript, Dreamweaver | Role: Designing &amp; Developing</p>
-    <p>A static, mobile-responsive PHP website representing Arham Composite. I designed the layouts in Photoshop, converted them to HTML/CSS in Dreamweaver, and edited JavaScript for usability.</p>
-  </div>
-
-  <div class="project">
-    <h3><a href="http://www.datavigil.com">www.datavigil.com</a> | <a href="http://www.heenasteel.com">www.heenasteel.com</a></h3>
-    <p class="meta">WordPress, Photoshop, HTML5, CSS3, JavaScript, PHP, Dreamweaver | Role: Designing &amp; Developing</p>
-    <p>Responsive WordPress websites. Layouts were designed in Photoshop and converted to HTML5/CSS3 with JavaScript enhancements.</p>
-  </div>
-
-  <div class="project">
-    <h3><a href="http://www.inarc.co.in">www.inarc.co.in</a> | <a href="http://www.moxielan.org">www.moxielan.org</a></h3>
-    <p class="meta">Photoshop, HTML, CSS3, JavaScript, Dreamweaver | Role: Designing &amp; Developing</p>
-    <p>Static websites with home and landing pages designed in Photoshop and converted to HTML/CSS in Dreamweaver.</p>
-  </div>
-
-  <div class="project">
-    <h3><a href="http://www.stellarspecialtyfoods.com">www.stellarspecialtyfoods.com</a></h3>
-    <p class="meta">Photoshop, HTML, CSS3, JavaScript, Dreamweaver | Role: Designing &amp; Developing</p>
-    <p>A web portal built from scratch by me, from creating the Stellar logo in Photoshop to designing the home page and converting it to HTML/CSS in Dreamweaver.</p>
-  </div>
+<section class="s" id="trends">
+  <h2>AI design trends in 2026</h2>
+  <p class="lead">What I am watching and using in interface design this year. Select a topic.</p>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="tp" id="tp" role="tabpanel" aria-live="polite"></div>
 </section>
 
-<section id="work">
-  <h2>Examples of Work</h2>
-  <p class="links">
-    <a href="http://www.4axiscommunications.com">4axiscommunications.com</a>
-    <a href="http://www.stellaragrofoods.com">stellaragrofoods.com</a>
-    <a href="http://www.maganlalsons.com">maganlalsons.com</a>
-    <a href="http://www.bharavilab.com">bharavilab.com</a>
-    <a href="http://www.lpl.net.in">lpl.net.in</a>
-    <a href="http://www.bcsbt.org">bcsbt.org</a>
-    <a href="http://www.lactoseindialimited.com">lactoseindialimited.com</a>
-    <a href="http://www.venturesinfra.co.in">venturesinfra.co.in</a>
-    <a href="http://www.saespl.co.in">saespl.co.in</a>
-    <a href="http://www.cleaningservices.co.in">cleaningservices.co.in</a>
-    <a href="http://www.teryairshipsupply.com">teryairshipsupply.com</a>
-    <a href="http://www.sebamed-usvindia.com">sebamed-usvindia.com</a>
-    <a href="http://www.medulla.in">medulla.in</a>
-    <a href="http://www.mychrysalisedu.com">mychrysalisedu.com</a>
-    <a href="http://www.editool.in">editool.in</a>
-    <a href="http://www.journalofpreventivecardiology.com">journalofpreventivecardiology.com</a>
-    <a href="http://www.cmeplus.org">cmeplus.org</a>
-    <a href="http://www.dolphinoffshore.com">dolphinoffshore.com</a>
-    <a href="http://www.usvbiologics.com">usvbiologics.com</a>
-    <a href="http://www.alkapower.in">alkapower.in</a>
-    <a href="http://www.jalanwires.com">jalanwires.com</a>
-    <a href="http://www.3dmetalfabrication.com">3dmetalfabrication.com</a>
-    <a href="http://www.dodhiagroup.com">dodhiagroup.com</a>
-    <a href="http://www.sddjewels.com">sddjewels.com</a>
-    <a href="http://www.sharptechcompany.com">sharptechcompany.com</a>
-    <a href="http://www.itaakash.com">itaakash.com</a>
-    <a href="http://www.pkjgroup.in">pkjgroup.in</a>
-    <a href="http://www.pandurangacherajya.com">pandurangacherajya.com</a>
-    <a href="http://www.indialship.com">indialship.com</a>
-    <a href="http://www.vibhinna.com">vibhinna.com</a>
-    <a href="http://www.keihifi.com">keihifi.com</a>
-    <a href="http://www.teryair.com">teryair.com</a>
-    <a href="http://www.strokepumps.com">strokepumps.com</a>
-  </p>
+<section class="s" id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <article class="card"><h3><a href="http://www.kalyxinfotech.com">kalyxinfotech.com</a></h3><small>Bootstrap, HTML5, CSS3, PHP</small><p>Responsive services site. Home and inner pages designed in Photoshop, built in HTML5 with script tweaks for usability.</p></article>
+    <article class="card"><h3><a href="http://www.smell.co.in">smell.co.in</a> / <a href="http://www.beautyandvogue.com">beautyandvogue.com</a></h3><small>Bootstrap + WordPress</small><p>Responsive WordPress sites designed and developed for every screen size.</p></article>
+    <article class="card"><h3><a href="http://www.arhamcomposite.com">arhamcomposite.com</a></h3><small>HTML, CSS3, PHP</small><p>Mobile-responsive PHP site for Arham Composite, designed in Photoshop and built in Dreamweaver.</p></article>
+    <article class="card"><h3><a href="http://www.datavigil.com">datavigil.com</a> / <a href="http://www.heenasteel.com">heenasteel.com</a></h3><small>WordPress, HTML5, CSS3</small><p>Responsive WordPress sites with custom layouts and JavaScript enhancements.</p></article>
+    <article class="card"><h3><a href="http://www.inarc.co.in">inarc.co.in</a> / <a href="http://www.moxielan.org">moxielan.org</a></h3><small>HTML, CSS3, JavaScript</small><p>Static sites with home and landing pages designed in Photoshop and converted to HTML.</p></article>
+    <article class="card"><h3><a href="http://www.stellarspecialtyfoods.com">stellarspecialtyfoods.com</a></h3><small>Logo, design, HTML</small><p>A web portal built from scratch: logo first, then the home page design and development.</p></article>
+  </div>
+  <h3 style="margin:34px 0 8px">More work</h3>
+  <div class="links">
+    <a href="http://www.4axiscommunications.com">4axiscommunications.com</a><a href="http://www.stellaragrofoods.com">stellaragrofoods.com</a><a href="http://www.maganlalsons.com">maganlalsons.com</a><a href="http://www.bharavilab.com">bharavilab.com</a><a href="http://www.lpl.net.in">lpl.net.in</a><a href="http://www.bcsbt.org">bcsbt.org</a><a href="http://www.lactoseindialimited.com">lactoseindialimited.com</a><a href="http://www.venturesinfra.co.in">venturesinfra.co.in</a><a href="http://www.saespl.co.in">saespl.co.in</a><a href="http://www.cleaningservices.co.in">cleaningservices.co.in</a><a href="http://www.teryairshipsupply.com">teryairshipsupply.com</a><a href="http://www.sebamed-usvindia.com">sebamed-usvindia.com</a><a href="http://www.medulla.in">medulla.in</a><a href="http://www.mychrysalisedu.com">mychrysalisedu.com</a><a href="http://www.editool.in">editool.in</a><a href="http://www.journalofpreventivecardiology.com">journalofpreventivecardiology.com</a><a href="http://www.cmeplus.org">cmeplus.org</a><a href="http://www.dolphinoffshore.com">dolphinoffshore.com</a><a href="http://www.usvbiologics.com">usvbiologics.com</a><a href="http://www.alkapower.in">alkapower.in</a><a href="http://www.jalanwires.com">jalanwires.com</a><a href="http://www.3dmetalfabrication.com">3dmetalfabrication.com</a><a href="http://www.dodhiagroup.com">dodhiagroup.com</a><a href="http://www.sddjewels.com">sddjewels.com</a><a href="http://www.sharptechcompany.com">sharptechcompany.com</a><a href="http://www.itaakash.com">itaakash.com</a><a href="http://www.pkjgroup.in">pkjgroup.in</a><a href="http://www.pandurangacherajya.com">pandurangacherajya.com</a><a href="http://www.indialship.com">indialship.com</a><a href="http://www.vibhinna.com">vibhinna.com</a><a href="http://www.keihifi.com">keihifi.com</a><a href="http://www.teryair.com">teryair.com</a><a href="http://www.strokepumps.com">strokepumps.com</a>
+  </div>
+  <h3 style="margin:34px 0 8px">Strengths</h3>
+  <p class="lead">Confident, optimistic, hard working, eager to learn, open to challenges and change, dedicated, helpful, sincere and diligent. Away from work: video games, music and internet surfing.</p>
 </section>
 
-<section id="about">
-  <h2>Strengths</h2>
-  <ul class="tags">
-    <li>Confident</li><li>Optimistic</li><li>Hard working</li><li>Strong will to learn</li>
-    <li>Positive attitude</li><li>Open to challenges &amp; change</li>
-    <li>Dedicated</li><li>Helpful</li><li>Sincere &amp; diligent</li>
-  </ul>
-  <h2 style="margin-top:24px">Interests</h2>
-  <p>Playing video games, listening to music, and internet surfing.</p>
+<section class="s" id="contact">
+  <h2>Contact me</h2>
+  <p class="lead">Tell me about your project. Your message goes straight to my Google Sheet.</p>
+  <form id="cf" novalidate>
+    <label>Name<input name="name" required autocomplete="name"></label>
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+    <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel"></label>
+    <label>Message<textarea name="message" required></textarea></label>
+    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button class="btn" type="submit" id="send">Send message</button>
+    <div id="status" role="status"></div>
+  </form>
 </section>
-
-</main>
 
 <footer>&copy; Anji Rasakonda. All rights reserved.</footer>
 
+<script>
+// 1. Paste your Google Apps Script Web App URL here (see setup steps)
+const SCRIPT_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+
+// Typing prompt
+const lines=["Design a landing page that tracks every lead.","Turn this PSD into a responsive site.","Make this interface feel simple."];
+const typed=document.getElementById('typed');let li=0,ci=0,del=false;
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+(function tick(){
+  const t=lines[li];
+  if(reduce){typed.textContent=t;return}
+  typed.textContent=t.slice(0,ci);
+  if(!del&&ci===t.length){del=true;return setTimeout(tick,1600)}
+  if(del&&ci===0){del=false;li=(li+1)%lines.length}
+  ci+=del?-1:1;setTimeout(tick,del?25:55);
+})();
+
+// Neural network canvas reacting to the cursor
+const cv=document.getElementById('net'),cx=cv.getContext('2d');let W,H,P=[],m={x:-999,y:-999};
+function size(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;
+  P=Array.from({length:Math.min(90,Math.floor(W/14))},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5}))}
+size();addEventListener('resize',size);
+cv.parentElement.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});
+cv.parentElement.addEventListener('pointerleave',()=>{m.x=m.y=-999});
+function draw(){
+  cx.clearRect(0,0,W,H);
+  for(const p of P){
+    if(!reduce){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
+    const dm=Math.hypot(p.x-m.x,p.y-m.y);
+    if(dm<150){cx.strokeStyle=`rgba(56,225,255,${1-dm/150})`;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(m.x,m.y);cx.stroke()}
+    cx.fillStyle=dm<150?'#38e1ff':'#7c5cff';cx.beginPath();cx.arc(p.x,p.y,dm<150?3:2,0,7);cx.fill();
+  }
+  for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){
+    const d=Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y);
+    if(d<110){cx.strokeStyle=`rgba(124,92,255,${.35*(1-d/110)})`;cx.beginPath();cx.moveTo(P[i].x,P[i].y);cx.lineTo(P[j].x,P[j].y);cx.stroke()}
+  }
+  if(!reduce)requestAnimationFrame(draw)
+}
+draw();
+
+// Count-up stats
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;io.unobserve(e.target);
+  const n=+e.target.dataset.n;let v=0;const s=Math.max(1,Math.ceil(n/40));
+  const t=setInterval(()=>{v=Math.min(n,v+s);e.target.textContent=v+(n>=15&&n!==15?'+':'');if(v===n)clearInterval(t)},30);
+}),{threshold:.6});
+document.querySelectorAll('[data-n]').forEach(el=>io.observe(el));
+
+// Skill filter
+document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  document.querySelectorAll('.skills li').forEach(li=>li.classList.toggle('off',b.dataset.f!=='all'&&li.dataset.c!==b.dataset.f));
+});
+
+// AI trends tabs
+const T=[
+ ["AI agents","Software that plans and completes multi-step tasks for the user, not just answers questions.","Design use: clear progress, easy undo, and a visible way to take control back."],
+ ["Generative UI","Interfaces that rearrange themselves for each person and task, based on what they are trying to do.","Design use: build flexible component systems instead of fixed page layouts."],
+ ["Multimodal","Apps that accept text, voice, images and video together in one conversation.","Design use: let people switch input type at any moment without losing context."],
+ ["Voice and video","AI voice-overs, avatars and short generated video are now normal for product and social content.","Design use: faster campaign visuals, edited and polished in Canva or Figma."],
+ ["Vibe coding","Describing an app in plain language and letting AI write the first version of the code.","Design use: working landing pages and tracking forms in hours, then refined by hand."],
+ ["Trust and privacy","People expect to know when AI is involved and how their data is used.","Design use: plain labels, consent choices and honest error messages."]
+];
+const tabs=document.getElementById('tabs'),tp=document.getElementById('tp');
+function show(i){
+  [...tabs.children].forEach((b,k)=>b.setAttribute('aria-selected',k===i));
+  tp.innerHTML='<h3></h3><p></p><p class="use"></p>';
+  tp.children[0].textContent=T[i][0];tp.children[1].textContent=T[i][1];tp.children[2].textContent=T[i][2];
+}
+T.forEach((t,i)=>{const b=document.createElement('button');b.className='tab';b.role='tab';b.textContent=t[0];b.onclick=()=>show(i);tabs.appendChild(b)});
+show(0);
+
+// Card tilt on pointer
+document.querySelectorAll('.card').forEach(c=>{
+  if(reduce)return;
+  c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(700px) rotateX(${-y*6}deg) rotateY(${x*6}deg) translateY(-3px)`});
+  c.addEventListener('pointerleave',()=>c.style.transform='');
+});
+
+// Resume print
+document.getElementById('print').onclick=()=>print();
+
+// Contact form -> Google Sheet
+const f=document.getElementById('cf'),st=document.getElementById('status'),sb=document.getElementById('send');
+f.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const d=new FormData(f);
+  if(d.get('website'))return;
+  if(!d.get('name').trim()||!/^\S+@\S+\.\S+$/.test(d.get('email'))||!d.get('message').trim()){
+    st.className='err';st.textContent='Enter your name, a valid email and a message.';return}
+  if(SCRIPT_URL.startsWith('PASTE_')){st.className='err';st.textContent='Add your Google Apps Script URL in the page code first.';return}
+  sb.disabled=true;st.className='';st.textContent='Sending...';
+  try{
+    await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',body:new URLSearchParams(d)});
+    st.className='ok';st.textContent='Message sent. I will reply soon.';f.reset();
+  }catch(err){st.className='err';st.textContent='Message not sent. Check your connection and try again.'}
+  sb.disabled=false;
+});
+</script>
 </body>
 </html>
